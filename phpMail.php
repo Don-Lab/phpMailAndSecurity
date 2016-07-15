@@ -26,11 +26,11 @@
         $sub = test_input($_POST["sub"]);
         $text = test_input($_POST["text"]);
       }
-      function test_input($text) {
-        $text = trim($text); //trim() removes unnecessary characters (extra space, newline, tab)
-        $text = stripslashes($text); // stripslashes() removes backslashes
-        $text = htmlspecialchars($text); //htmlspecialchars() is a method that replaces < and > with &lt and &gt entities to prevent Cross-site Scripting Attacks (XSS)
-        return $text;
+      function test_input($in) {
+        $in = trim($in); //trim() removes unnecessary characters (extra space, newline, tab)
+        $in = stripslashes($in); // stripslashes() removes backslashes
+        $in = htmlspecialchars($in); //htmlspecialchars() is a method that replaces < and > with &lt and &gt entities to prevent Cross-site Scripting Attacks (XSS)
+        return $in;
       }
         mail($sEmail, $sub, $text, "From:" . $from);
         //mail($sendToEmail, $subject, $text, "From:" . $from);
